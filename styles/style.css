@@ -1,0 +1,107 @@
+/* styles/style.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+/* font-family: 'Kumbh Sans', sans-serif; */
+
+/* 
+  - Mobile: 375px
+  - Desktop: 1440px
+*/
+
+:root {
+  --color-dark-cyan: hsl(185, 75%, 39%);
+  --color-very-dark-desaturated-blue: hsl(229, 23%, 23%);
+  --color-dark-grayish-blue: hsl(227, 10%, 46%);
+
+  --color-dark-gray: hsl(0, 0%, 59%);
+
+  --color-white: hsl(0, 0%, 100%);
+
+  /* - Font size (name and stats): 18px */
+  --base-font-size: calc((18 / 16) * 1rem);
+
+  background-color: var(--color-dark-cyan);
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: var(--base-font-size);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+:is(*, *::before, *::after) {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+:is(html, body) {
+  height: 100%;
+}
+
+:is(img, svg) {
+  display: block;
+  max-width: 100%;
+}
+
+:is(p, h1, h2, h3, h4, h5, h6) {
+  overflow-wrap: break-word;
+}
+
+/* Center the content in main. */
+
+main {
+  display: grid;
+  min-height: 100%;
+  place-items: center;
+}
+
+.card {
+  background-color: var(--color-white);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.card__body {
+  position: relative;
+  display: grid;
+  text-align: center;
+  grid-template-rows: 1fr max-content max-content;
+  padding-bottom: 1em;
+}
+
+.card__avatar {
+  position: absolute;
+  justify-self: center;
+  border-radius: 50%;
+  top: -48px;
+}
+
+.card__body h2 {
+  font-size: 1.563rem;
+  color: var(--color-very-dark-desaturated-blue);
+  margin-top: 4rem;
+}
+
+.card__body :is(span, p) {
+  color: var(--color-dark-grayish-blue);
+}
+
+.card__stats {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid var(--color-dark-grayish-blue);
+  padding: 1em;
+  text-align: center;
+}
+
+/* Footer styles. */
+
+footer {
+  text-align: center;
+}
+
+footer a {
+  color: hsl(228, 45%, 44%);
+}
