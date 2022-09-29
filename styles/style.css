@@ -55,6 +55,9 @@ main {
   display: grid;
   min-height: 100%;
   place-items: center;
+  padding: 1em;
+  background-image: contain url(../images/bg-pattern-top.svg);
+  background-repeat: no-repeat;
 }
 
 .card {
@@ -63,24 +66,29 @@ main {
   overflow: hidden;
 }
 
+.card h2 {
+  font-size: 1.563rem;
+  color: var(--color-very-dark-desaturated-blue);
+}
+
 .card__body {
   position: relative;
   display: grid;
   text-align: center;
-  grid-template-rows: 1fr max-content max-content;
   padding-bottom: 1em;
 }
 
 .card__avatar {
+  --avatar-height: 96 / 2;
+
+  border: 5px solid var(--color-white);
   position: absolute;
   justify-self: center;
   border-radius: 50%;
-  top: -48px;
+  top: calc(var(--avatar-height) * -1px);
 }
 
 .card__body h2 {
-  font-size: 1.563rem;
-  color: var(--color-very-dark-desaturated-blue);
   margin-top: 4rem;
 }
 
@@ -94,6 +102,10 @@ main {
   border-top: 1px solid var(--color-dark-grayish-blue);
   padding: 1em;
   text-align: center;
+}
+
+.card__stats p {
+  color: var(--color-dark-grayish-blue);
 }
 
 /* Footer styles. */
