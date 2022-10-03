@@ -13,15 +13,12 @@
   --color-dark-cyan: hsl(185, 75%, 39%);
   --color-very-dark-desaturated-blue: hsl(229, 23%, 23%);
   --color-dark-grayish-blue: hsl(227, 10%, 46%);
-
   --color-dark-gray: hsl(0, 0%, 59%);
 
   --color-white: hsl(0, 0%, 100%);
 
   /* - Font size (name and stats): 18px */
   --base-font-size: calc((18 / 16) * 1rem);
-
-  --image-width: 978;
 
   background-color: var(--color-dark-cyan);
   font-family: 'Kumbh Sans', sans-serif;
@@ -53,21 +50,20 @@
 }
 
 /* Center the content in main. */
+/* 
+  bg-pattern-top - 
+    x position: Lock it at half the screen width. Then push it about 3rem to the right.
+    y position: Lock it at half the screen width.
+  */
 
 main {
+  background-image: url(../images/bg-pattern-top.svg), url(../images/bg-pattern-bottom.svg);
+  background-position: calc((100% - 50vw) + 3rem) calc(100% - 50vh), 50vw 40vh;
+  background-repeat: no-repeat;
   display: grid;
   min-height: 100%;
-  place-items: center;
   padding: 1em;
-  background-image: url(../images/bg-pattern-top.svg), url(../images/bg-pattern-bottom.svg);
-  background-repeat: no-repeat;
-  /* 
-    bg-pattern-top - 
-      x position: Lock it at half the screen width. Then push it about 3rem to the right.
-      y position: Lock it at half the screen width.
-   */
-  background-position: calc((100% - 50vw) + 3rem) calc(100% - 50vh), 50vw 40vh;
-
+  place-items: center;
 }
 
 .card {
@@ -77,24 +73,28 @@ main {
 }
 
 .card h2 {
-  font-size: 1.563rem;
   color: var(--color-very-dark-desaturated-blue);
+  font-size: 1.563rem;
 }
 
 .card__body {
-  position: relative;
   display: grid;
-  text-align: center;
   padding-bottom: 1em;
+  position: relative;
+  text-align: center;
 }
 
+/* 
+  Avatar height is 96px;
+  Center the avatar and push it up half its height.
+ */
 .card__avatar {
   --avatar-height: 96 / 2;
 
   border: 5px solid var(--color-white);
-  position: absolute;
-  justify-self: center;
   border-radius: 50%;
+  justify-self: center;
+  position: absolute;
   top: calc(var(--avatar-height) * -1px);
 }
 
@@ -107,9 +107,9 @@ main {
 }
 
 .card__stats {
+  border-top: 1px solid var(--color-dark-grayish-blue);
   display: flex;
   justify-content: space-around;
-  border-top: 1px solid var(--color-dark-grayish-blue);
   padding: 1em;
   text-align: center;
 }
