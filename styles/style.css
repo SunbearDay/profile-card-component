@@ -21,11 +21,14 @@
   /* - Font size (name and stats): 18px */
   --base-font-size: calc((18 / 16) * 1rem);
 
+  --image-width: 978;
+
   background-color: var(--color-dark-cyan);
   font-family: 'Kumbh Sans', sans-serif;
   font-size: var(--base-font-size);
   font-weight: 400;
   line-height: 1.5;
+
 }
 
 :is(*, *::before, *::after) {
@@ -56,8 +59,11 @@ main {
   min-height: 100%;
   place-items: center;
   padding: 1em;
-  background-image: contain url(../images/bg-pattern-top.svg);
+  background-image: url(../images/bg-pattern-top.svg), url(../images/bg-pattern-bottom.svg);
   background-repeat: no-repeat;
+  background-position: 
+    calc(((50vw - 100%) * -1) + 3rem) calc((50vh - 100%) * -1),
+    50vw 40vh;
 }
 
 .card {
